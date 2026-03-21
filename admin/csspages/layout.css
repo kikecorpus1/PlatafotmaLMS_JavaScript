@@ -1,0 +1,721 @@
+/* ============================================
+   ACADEMIA SWBAR400 — Layout Admin
+   Estilo: Profesional y Corporativo
+   ============================================ */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--fuente-cuerpo), sans-serif;
+    font-size: var(--fuente-cuerpo-size);
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto2);
+    min-height: 100vh;
+}
+
+/* ============================================
+   LAYOUT PRINCIPAL
+   ============================================ */
+
+.contenedorDePagina {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* ============================================
+   SIDEBAR — ancho fijo en TODAS las páginas
+   ============================================ */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 220px !important;
+    min-width: 220px !important;
+    max-width: 220px !important;
+    min-height: 100vh;
+    background-color: var(--color-sidebar);
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    box-shadow: 4px 0 16px rgba(0,0,0,0.15);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar { display: none; }
+
+/* Logo */
+.sidebar .diminutivo {
+    width: 50px;
+    margin: 1.5rem auto 0.5rem;
+    display: block;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    flex-shrink: 0;
+}
+
+/* ✅ FIX: TODOS los textos del sidebar en color claro */
+.sidebar *,
+.sidebar a,
+.sidebar p,
+.sidebar h2,
+.sidebar span,
+.sidebar li,
+.sidebar nav,
+.sidebar nav *,
+.sidebar .nav-link,
+.sidebar .nav-link *,
+.sidebar .contenedorRecientes,
+.sidebar .contenedorRecientes *,
+.sidebar .contenedorModulos,
+.sidebar .contenedorModulos * {
+    color: var(--color-texto-sidebar) !important;
+    text-decoration: none !important;
+}
+
+/* Nombre academia */
+.sidebar-brand {
+    font-family: var(--fuente-titulo);
+    font-size: 0.88rem;
+    text-align: center;
+    padding: 0 1rem 1.25rem;
+    letter-spacing: 0.3px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Nav del sidebar */
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    padding: 0.75rem 0;
+}
+
+/* Label de sección */
+.sidebar-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1rem 1.25rem 0.35rem;
+    font-family: var(--fuente-titulo);
+    opacity: 0.4;
+}
+
+/* Cada item del nav */
+.sidebar nav .nav-link,
+.sidebar nav div.nav-link {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+}
+
+/* Links y párrafos dentro del nav */
+.sidebar nav .nav-link a,
+.sidebar nav .nav-link p {
+    display: flex !important;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.87rem;
+    transition: var(--transicion);
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar nav .nav-link a:hover,
+.sidebar nav .nav-link p:hover {
+    color: white !important;
+    background: rgba(255,255,255,0.07);
+    border-left-color: var(--color-primario);
+}
+
+.sidebar nav .nav-link.active a,
+.sidebar nav .nav-link.active p {
+    color: white !important;
+    background: rgba(255, 144, 0, 0.18);
+    border-left-color: var(--color-primario);
+    font-family: var(--fuente-titulo);
+}
+
+/* Gráfica */
+.contenedorDeGrafica {
+    padding: 1rem 1.25rem;
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-top: auto;
+}
+
+.contenedorDeGrafica h2 {
+    font-size: 0.7rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    font-family: var(--fuente-titulo);
+    opacity: 0.5;
+}
+
+canvas {
+    width: 100% !important;
+    border-radius: var(--radio-sm);
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ============================================
+   PRINCIPAL — margen igual en todas las páginas
+   ============================================ */
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 220px) !important;
+    margin-left: 220px !important;
+    min-height: 100vh;
+}
+
+/* ============================================
+   ENCABEZADO / NAVBAR
+   ============================================ */
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    background: var(--color-tarjeta);
+    border-bottom: 1px solid var(--color-tarjeta-borde);
+    box-shadow: var(--sombra-sm);
+    width: 100%;
+}
+
+.navbar {
+    padding: 0 !important;
+    width: 100%;
+}
+
+.container-fluid {
+    padding: 0 1.5rem !important;
+}
+
+.navegadores {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 58px;
+}
+
+.pages {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    align-items: center;
+}
+
+.pages .nav-link {
+    font-size: 0.87rem !important;
+    color: var(--color-texto-muted) !important;
+    padding: 0.35rem 0.8rem !important;
+    border-radius: var(--radio-md);
+    transition: var(--transicion);
+}
+
+.pages .nav-link.active,
+.pages .nav-link:hover {
+    color: var(--color-primario) !important;
+    background: var(--color-primario-light);
+}
+
+.botonesH {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    position: relative;
+}
+
+.botonesH a {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.botonesH img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: var(--transicion);
+    opacity: 0.55;
+}
+
+.botonesH img:hover {
+    opacity: 1;
+    transform: scale(1.12);
+}
+
+.botonesH p {
+    font-size: 0.87rem;
+    font-family: var(--fuente-titulo);
+    color: var(--color-texto2) !important;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* ============================================
+   CUERPO
+   ============================================ */
+
+.cuerpo {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex: 1;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.5rem;
+    gap: 1.1rem;
+    overflow-y: auto;
+    min-width: 0;
+}
+
+.dashboard > h2 {
+    font-family: var(--fuente-titulo);
+    color: var(--color-texto2);
+    font-size: 1.2rem;
+    margin: 0;
+    padding-bottom: 0.65rem;
+    border-bottom: 2px solid var(--color-primario-light);
+}
+
+.contenedorDeTabla {
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-tarjeta-borde);
+    border-radius: var(--radio-lg);
+    overflow: auto;
+    box-shadow: var(--sombra-sm);
+    max-height: 400px;
+}
+
+.contenedorDeTablaL {
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-tarjeta-borde);
+    border-radius: var(--radio-lg);
+    overflow: auto;
+    box-shadow: var(--sombra-sm);
+    max-height: 260px;
+}
+
+/* ============================================
+   SIDEBAR CUERPO (estadísticas)
+   ============================================ */
+
+.sidebarCuerpo {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    min-width: 240px;
+    padding: 1.5rem 1rem;
+    gap: 0.85rem;
+    background: var(--color-tarjeta);
+    border-left: 1px solid var(--color-tarjeta-borde);
+    flex-shrink: 0;
+}
+
+.sidebarCuerpo h2 {
+    font-family: var(--fuente-titulo);
+    font-size: 0.78rem;
+    color: var(--color-texto-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding-bottom: 0.65rem;
+    border-bottom: 1px solid var(--color-tarjeta-borde);
+}
+
+.estadisticas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.cuadroEstadistica {
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-tarjeta-borde);
+    border-radius: var(--radio-md);
+    padding: 0.75rem 0.9rem 0.75rem 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transicion);
+}
+
+.cuadroEstadistica::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--color-primario);
+}
+
+.cuadroEstadistica:hover {
+    box-shadow: var(--sombra-sm);
+    transform: translateX(2px);
+}
+
+.cuadroEstadistica p { margin: 0; }
+
+.titulito {
+    font-size: 0.7rem;
+    font-family: var(--fuente-titulo);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-texto-muted);
+    margin-bottom: 0.2rem !important;
+}
+
+.infoEstadistica {
+    font-size: 1.4rem;
+    font-family: var(--fuente-titulo);
+    color: var(--color-texto2);
+    line-height: 1;
+}
+
+/* ============================================
+   PORTADA CURSO
+   ============================================ */
+
+.portadaCurso {
+    width: 100%;
+    height: 150px;
+    border-radius: var(--radio-lg);
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--sombra-md);
+    flex-shrink: 0;
+}
+
+.portadaCurso img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portadaCurso::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.55), transparent);
+}
+
+.portadaCurso h2 {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 1;
+    color: white !important;
+    font-family: var(--fuente-titulo);
+    font-size: 1.2rem;
+    margin: 0;
+    border-bottom: none !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.descripcion {
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-tarjeta-borde);
+    border-radius: var(--radio-md);
+    padding: 0.9rem 1.1rem;
+    font-size: 0.87rem;
+    color: var(--color-texto-muted);
+    line-height: 1.6;
+}
+
+/* ============================================
+   PERFIL
+   ============================================ */
+
+.contenedorPerfil {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.fotoPerfil {
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-tarjeta-borde);
+    border-radius: var(--radio-lg);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: var(--sombra-sm);
+}
+
+.fotoPerfil img.fp,
+.fotoPerfil img {
+    width: 85px !important;
+    height: 85px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-primario-light);
+    box-shadow: 0 0 0 2px var(--color-primario);
+    flex-shrink: 0;
+}
+
+.fotoPerfil p {
+    margin: 0.2rem 0;
+    font-size: 0.87rem;
+    color: var(--color-texto2);
+}
+
+.infoPerfil {
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-tarjeta-borde);
+    border-radius: var(--radio-lg);
+    padding: 1.1rem;
+    box-shadow: var(--sombra-sm);
+    overflow: auto;
+}
+
+/* ============================================
+   MODALES
+   ============================================ */
+
+.modal-content {
+    border: none !important;
+    border-radius: var(--radio-lg) !important;
+    box-shadow: var(--sombra-lg) !important;
+}
+
+.modal-header {
+    background: var(--color-primario-light);
+    border-bottom: 1px solid var(--color-tarjeta-borde) !important;
+    border-radius: var(--radio-lg) var(--radio-lg) 0 0 !important;
+    padding: 0.9rem 1.25rem !important;
+}
+
+.modal-title {
+    font-family: var(--fuente-titulo) !important;
+    color: var(--color-primario-dark) !important;
+    font-size: 0.95rem !important;
+}
+
+#formModuloContainer,
+#formLeccionContainer,
+#formModificarDocente,
+#formModificarEstudiante {
+    background: var(--color-tarjeta) !important;
+    border: 1px solid var(--color-tarjeta-borde) !important;
+    border-radius: var(--radio-lg) !important;
+    padding: 1.1rem !important;
+    box-shadow: var(--sombra-sm) !important;
+    animation: fadeIn 0.2s ease;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.botonesCrear {
+    display: flex;
+    flex-direction: row;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+}
+
+#crearEstudiante,
+#crearDocente,
+#crearCurso {
+    width: auto !important;
+    min-width: 130px;
+}
+
+/* ============================================
+   ✅ MODO OSCURO — aplica a toda la página
+   ============================================ */
+
+body.modoOscuro {
+    background-color: var(--color-fondo) !important;
+    color: var(--color-texto2) !important;
+}
+
+body.modoOscuro .principal,
+body.modoOscuro .dashboard,
+body.modoOscuro .cuerpo {
+    background-color: var(--color-fondo);
+}
+
+body.modoOscuro .encabezado,
+body.modoOscuro nav.navbar {
+    background: var(--color-tarjeta) !important;
+    border-bottom-color: var(--color-tarjeta-borde) !important;
+}
+
+body.modoOscuro .pages .nav-link {
+    color: #94A3B8 !important;
+}
+
+body.modoOscuro .pages .nav-link.active,
+body.modoOscuro .pages .nav-link:hover {
+    color: var(--color-primario) !important;
+}
+
+body.modoOscuro .botonesH p {
+    color: var(--color-texto2) !important;
+}
+
+body.modoOscuro .botonesH img {
+    filter: invert(1) opacity(0.6);
+}
+
+body.modoOscuro .botonesH img:hover {
+    filter: invert(1) opacity(1);
+}
+
+body.modoOscuro .sidebarCuerpo {
+    background: var(--color-tarjeta);
+    border-left-color: var(--color-tarjeta-borde);
+}
+
+body.modoOscuro .cuadroEstadistica {
+    background: var(--color-tarjeta);
+    border-color: var(--color-tarjeta-borde);
+}
+
+body.modoOscuro .cuadroEstadistica .titulito {
+    color: #94A3B8 !important;
+}
+
+body.modoOscuro .cuadroEstadistica .infoEstadistica {
+    color: var(--color-texto2) !important;
+}
+
+body.modoOscuro .sidebarCuerpo h2 {
+    color: #94A3B8 !important;
+    border-bottom-color: var(--color-tarjeta-borde) !important;
+}
+
+body.modoOscuro .contenedorDeTabla,
+body.modoOscuro .contenedorDeTablaL {
+    background: var(--color-tarjeta);
+    border-color: var(--color-tarjeta-borde);
+}
+
+body.modoOscuro .table {
+    color: var(--color-texto2) !important;
+}
+
+body.modoOscuro .table thead th {
+    background-color: rgba(255,144,0,0.1) !important;
+    color: var(--color-primario) !important;
+    border-color: var(--color-tarjeta-borde) !important;
+}
+
+body.modoOscuro .table tbody tr:hover {
+    background: rgba(255,144,0,0.08) !important;
+}
+
+body.modoOscuro .table tbody td {
+    border-color: var(--color-tarjeta-borde) !important;
+    color: var(--color-texto2) !important;
+}
+
+body.modoOscuro .fotoPerfil,
+body.modoOscuro .infoPerfil,
+body.modoOscuro .descripcion {
+    background: var(--color-tarjeta);
+    border-color: var(--color-tarjeta-borde);
+}
+
+body.modoOscuro .fotoPerfil p {
+    color: var(--color-texto2) !important;
+}
+
+body.modoOscuro .form-control,
+body.modoOscuro .form-select {
+    background-color: var(--color-input) !important;
+    border-color: var(--color-tarjeta-borde) !important;
+    color: var(--color-texto2) !important;
+}
+
+body.modoOscuro #formModuloContainer,
+body.modoOscuro #formLeccionContainer,
+body.modoOscuro #formModificarDocente,
+body.modoOscuro #formModificarEstudiante {
+    background: var(--color-tarjeta) !important;
+    border-color: var(--color-tarjeta-borde) !important;
+}
+
+body.modoOscuro .dashboard > h2 {
+    color: var(--color-texto2) !important;
+    border-bottom-color: rgba(255,144,0,0.3) !important;
+}
+
+body.modoOscuro .form-label {
+    color: var(--color-texto2) !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .sidebarCuerpo {
+        width: 200px;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 56px !important;
+        min-width: 56px !important;
+        max-width: 56px !important;
+    }
+    .sidebar nav .nav-link a span,
+    .sidebar nav .nav-link p,
+    .sidebar-brand,
+    .sidebar-label,
+    .contenedorDeGrafica {
+        display: none !important;
+    }
+    .principal {
+        width: calc(100% - 56px) !important;
+        margin-left: 56px !important;
+    }
+    .sidebarCuerpo {
+        display: none;
+    }
+    .cuerpo {
+        flex-direction: column;
+    }
+}

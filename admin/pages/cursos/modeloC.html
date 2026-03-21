@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detalle del Curso</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../csspages/style.css"/>
+</head>
+<script src="../../script/modoOscuro.js"></script>
+
+<body>
+  <div class="contenedorDePagina">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="../../../recursos/img/img/diminutivo1.png" class="diminutivo" />
+      <nav class="nav flex-column">
+        <div class="contenedorRecientes">
+          <div class="nav-link active"><a href="../cursos.html"><p>Cursos</p></a></div>
+          <div class="nav-link"><a href="../docentes/docente.html"><p>Docentes</p></a></div>
+          <div class="nav-link"><a href="../estudiantes/estudiantes.html"><p>Estudiantes</p></a></div>
+        </div>
+
+        <h2>Modulos</h2>
+        <div class="contenedorRecientes" id="contenedorModulos"></div>
+      </nav>
+    </div>
+
+    <!-- Principal -->
+    <div class="principal">
+
+      <!-- Encabezado -->
+      <div class="encabezado">
+
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navegadores">
+                <div class="pages">
+                  <a class="nav-link active" href="../../panel.html">Panel</a>
+                  <a class="nav-link" href="../cursos.html">Cursos</a>
+                </div>
+
+                <div class="botonesH">
+                  <img src="../../../recursos/img/componentes/toggle2-off.svg" alt="">
+
+                  <a href=""><img src="../../../recursos/img/componentes/bell-fill.svg" alt="" id="notificaciones"></a>
+                    <a href="../../pages/herramientas.html"><img src="../../../recursos/img/componentes/tools.svg" alt=""></a>
+
+                  <a href="../perfilAdmi.html"><img src="../../../recursos/img/componentes/person-circle.svg" alt=""></a>
+                  <a href="../perfilAdmi.html"><p>Admin</p></a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+
+              <!-- Cuerpo -->
+      <div class="cuerpo">
+        <div class="dashboard">
+          
+          <div class="portadaCurso">
+            <img id="portadaImg" src="" alt="Portada del curso">
+            <h2 id="tituloCurso">…</h2>
+          </div>
+          <div class="descripcion">
+            <p id="descripcionCurso">…</p>
+          </div>
+
+          <h2>Lecciones</h2>
+          <div class="contenedorDeTablaL">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Nombre</th>
+                  <th>Fecha Inicio</th>
+                  <th>Fecha Fin</th>
+                </tr>
+              </thead>
+              <tbody id="tablaLecciones"></tbody>
+            </table>
+          </div>
+
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-primary botones" id="btnModificar">Modificar</button>
+            <button type="button" class="btn btn-danger botones" id="btnEliminar">Eliminar</button>
+          </div>
+
+          <div class="modal fade" id="modalEditarCurso" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Curso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formEditarCurso">
+          <div class="mb-3">
+            <label for="nombreCurso" class="form-label">Nombre</label>
+            <input type="text" id="nombreCurso" name="nombre" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="descripcionCursoInput" class="form-label">Descripción</label>
+            <textarea id="descripcionCursoInput" name="descripcion" class="form-control" required></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="fotoCurso" class="form-label">URL Foto</label>
+            <input type="text" id="fotoCurso" name="foto" class="form-control" required>
+          </div>
+
+          <!-- aquí podrías agregar inputs dinámicos para módulos y lecciones si quieres editarlos -->
+
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+        </div>
+
+
+
+        <!-- Sidebar 2 -->
+        <div class="sidebarCuerpo">
+          <h2>Tablero del Curso</h2>
+          <div class="estadisticas">
+            <div class="cuadroEstadistica">
+              <p class="titulito">Estudiantes Registrados</p>
+              <p class="infoEstadistica" id="statEstudiantes">—</p>
+            </div>
+            <div class="cuadroEstadistica">
+              <p class="titulito">Progreso del Curso</p>
+              <p class="infoEstadistica" id="statProgreso">—</p>
+            </div>
+            <div class="cuadroEstadistica">
+              <p class="titulito">Tareas Pendientes</p>
+              <p class="infoEstadistica" id="statTareas">—</p>
+            </div>
+          </div>
+          <div>
+            <button type="button" class="btn btn-primary botones" id="btnNotas">Notas</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./modeloC.js"></script>
+</body>
+</html>

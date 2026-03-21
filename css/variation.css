@@ -1,0 +1,75 @@
+/* ============================================
+   ACADEMIA SWBAR400 — Variables Globales
+   Estilo: Profesional y Corporativo
+   Color principal: #FF9000
+   ============================================ */
+
+:root {
+    /* Colores principales */
+    --color-primario:         #FF9000;
+    --color-primario-hover:   #e07d00;
+    --color-primario-light:   #fff3e0;
+    --color-primario-dark:    #b36400;
+
+    /* Fondos */
+    --color-fondo:            #F4F6F9;
+    --color-fondo-oscuro:     #FFFFFF;
+    --color-sidebar:          #1A1F2E;
+    --color-sidebar-hover:    #252B3B;
+    --color-sidebar-active:   #FF9000;
+
+    /* Superficies */
+    --color-tarjeta:          #FFFFFF;
+    --color-tarjeta-borde:    #E8ECF0;
+    --color-input:            #F8F9FA;
+
+    /* Textos */
+    --color-texto:            #FFFFFF;
+    --color-texto2:           #1A1F2E;
+    --color-texto-muted:      #6B7280;
+    --color-texto-sidebar:    #A8B2C1;
+
+    /* Componentes */
+    --color-componentes:      #FF9000;
+    --color-componentes2:     #6B7280;
+    --color-exito:            #10B981;
+    --color-peligro:          #EF4444;
+    --color-advertencia:      #F59E0B;
+    --color-info:             #3B82F6;
+
+    /* Sombras */
+    --sombra-sm:     0 1px 3px rgba(0, 0, 0, 0.08);
+    --sombra-md:     0 4px 12px rgba(0, 0, 0, 0.10);
+    --sombra-lg:     0 8px 24px rgba(0, 0, 0, 0.12);
+    --sombra-naranja: 0 4px 14px rgba(255, 144, 0, 0.35);
+
+    /* Bordes */
+    --radio-sm:   6px;
+    --radio-md:   10px;
+    --radio-lg:   16px;
+    --radio-xl:   24px;
+
+    /* Tipografía */
+    --fuente-titulo:        'interSemiBold', sans-serif;
+    --fuente-titulo-italic: 'interSemiBoldItalic', sans-serif;
+    --fuente-cuerpo:        'interRegular', sans-serif;
+    --fuente-titulo-size:   1.1rem;
+    --fuente-cuerpo-size:   0.9rem;
+
+    /* Transiciones */
+    --transicion: all 0.25s ease;
+}
+
+/* Modo oscuro */
+body.modoOscuro {
+    --color-fondo:         #0F1117;
+    --color-fondo-oscuro:  #1A1F2E;
+    --color-sidebar:       #0A0D14;
+    --color-sidebar-hover: #141820;
+    --color-tarjeta:       #1A1F2E;
+    --color-tarjeta-borde: #2A3040;
+    --color-input:         #252B3B;
+    --color-texto2:        #F1F5F9;
+    --color-texto-muted:   #94A3B8;
+    --color-primario-light: #2A1F00;
+}

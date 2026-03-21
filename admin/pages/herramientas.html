@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herramientas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="../csspages/style.css">
+</head>
+<script src="../script/modoOscuro.js"></script>
+
+<body>
+  <div class="contenedorDePagina">
+
+    <!-- sidebar-->
+    <div class="sidebar">
+      <!-- ✅ FIX: ruta corregida (era ../../../../recursos) -->
+      <img src="../../recursos/img/img/diminutivo1.png" class="diminutivo">
+
+      <nav class="nav flex-column">
+        <div class="contenedorRecientes">
+          <div class="nav-link active" aria-current="page">
+            <a href="./perfilAdmi.html"><p>Perfil</p></a>
+          </div>
+          <div class="nav-link">
+            <a href="./herramientas.html"><p>Herramientas</p></a>
+          </div>
+          <div class="nav-link">
+            <a href="#" id="btnCerrarSesion"><p>Cerrar Sesión</p></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--Principal-->
+    <div class="principal">
+
+      <!--encabezado-->
+      <div class="encabezado">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navegadores">
+                <div class="pages">
+                  <a class="nav-link active" aria-current="page" href="../panel.html">Panel</a>
+                  <a class="nav-link" href="../pages/cursos.html">Cursos</a>
+                </div>
+
+                <div class="botonesH">
+                  <!-- ✅ FIX: rutas corregidas (eran ../../../../recursos) -->
+                  <img src="../../recursos/img/componentes/toggle2-off.svg" alt="">
+                  <a href=""><img src="../../recursos/img/componentes/bell-fill.svg" alt="" id="notificaciones"></a>
+                  <a href="../pages/herramientas.html"><img src="../../recursos/img/componentes/tools.svg" alt=""></a>
+                  <a href="./perfilAdmi.html"><img src="../../recursos/img/componentes/person-circle.svg" alt=""></a>
+                  <a href="./perfilAdmi.html"><p>Admin</p></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!--cuerpo-->
+      <div class="cuerpo">
+
+        <div class="dashboard">
+          <h2>Herramientas</h2>
+          <div class="contenedorPerfil">
+            <div class="fotoPerfil" id="fotoPerfil"></div>
+          </div>
+        </div>
+
+        <!--SideBar 2-->
+        <div class="sidebarCuerpo">
+          <h2>Tablero General</h2>
+          <div class="estadisticas">
+            <div class="cuadroEstadistica">
+              <p class="titulito">Estudiantes Registrados</p>
+              <p class="infoEstadistica">30</p>
+            </div>
+            <div class="cuadroEstadistica">
+              <p class="titulito">Progreso General</p>
+              <p class="infoEstadistica">50%</p>
+            </div>
+            <div class="cuadroEstadistica">
+              <p class="titulito">Docentes Activos</p>
+              <p class="infoEstadistica">3</p>
+            </div>
+            <div class="cuadroEstadistica">
+              <p class="titulito">Cursos Creados</p>
+              <p class="infoEstadistica">6</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous">
+</script>
+<script src="../script/logout.js"></script>
+  <script src="../script/herramientas.js"></script>
+
+</html>

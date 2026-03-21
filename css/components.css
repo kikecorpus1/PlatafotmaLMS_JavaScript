@@ -1,0 +1,211 @@
+/* ============================================
+   ACADEMIA SWBAR400 — Componentes Globales
+   ============================================ */
+
+/* ---- Bootstrap overrides ---- */
+.btn-primary {
+    background-color: var(--color-primario) !important;
+    border-color: var(--color-primario) !important;
+    color: white !important;
+    font-family: var(--fuente-titulo);
+    border-radius: var(--radio-md) !important;
+    padding: 0.5rem 1.25rem !important;
+    font-size: 0.88rem !important;
+    transition: var(--transicion) !important;
+    box-shadow: var(--sombra-naranja) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primario-hover) !important;
+    border-color: var(--color-primario-hover) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(255, 144, 0, 0.4) !important;
+}
+
+.btn-primary:active {
+    transform: translateY(0) !important;
+}
+
+.btn-warning {
+    background-color: #F59E0B !important;
+    border-color: #F59E0B !important;
+    color: white !important;
+    border-radius: var(--radio-md) !important;
+    font-size: 0.88rem !important;
+}
+
+.btn-secondary {
+    background-color: #E5E7EB !important;
+    border-color: #E5E7EB !important;
+    color: #374151 !important;
+    border-radius: var(--radio-md) !important;
+    font-size: 0.88rem !important;
+}
+
+.btn-danger {
+    border-radius: var(--radio-md) !important;
+    font-size: 0.88rem !important;
+}
+
+.btn-sm {
+    padding: 0.3rem 0.75rem !important;
+    font-size: 0.8rem !important;
+}
+
+/* ---- Tablas ---- */
+.table {
+    font-size: 0.88rem;
+    color: var(--color-texto2);
+}
+
+.table thead th {
+    background-color: var(--color-primario-light);
+    color: var(--color-primario-dark);
+    font-family: var(--fuente-titulo);
+    border: none;
+    padding: 0.85rem 1rem;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    transition: var(--transicion);
+    border-color: var(--color-tarjeta-borde);
+}
+
+.table tbody tr:hover {
+    background-color: var(--color-primario-light);
+}
+
+.table tbody td {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+    border-color: var(--color-tarjeta-borde);
+}
+
+.table img {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border: 2px solid var(--color-primario-light);
+}
+
+/* ---- Formularios ---- */
+.form-control, .form-select {
+    border: 1.5px solid var(--color-tarjeta-borde) !important;
+    border-radius: var(--radio-md) !important;
+    padding: 0.6rem 0.9rem !important;
+    font-size: 0.88rem !important;
+    background-color: var(--color-input) !important;
+    color: var(--color-texto2) !important;
+    transition: var(--transicion) !important;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--color-primario) !important;
+    box-shadow: 0 0 0 3px rgba(255, 144, 0, 0.15) !important;
+    background: white !important;
+}
+
+.form-label {
+    font-size: 0.82rem;
+    font-family: var(--fuente-titulo);
+    color: var(--color-texto2);
+    margin-bottom: 0.35rem;
+}
+
+/* ---- Cards / Tarjetas ---- */
+.card-stat {
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-tarjeta-borde);
+    border-radius: var(--radio-lg);
+    padding: 1.25rem 1.5rem;
+    transition: var(--transicion);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-primario);
+    border-radius: 0 2px 2px 0;
+}
+
+.card-stat:hover {
+    box-shadow: var(--sombra-md);
+    transform: translateY(-2px);
+}
+
+.card-stat .titulito {
+    font-size: 0.78rem;
+    font-family: var(--fuente-titulo);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-texto-muted);
+    margin: 0 0 0.4rem;
+}
+
+.card-stat .infoEstadistica {
+    font-size: 1.6rem;
+    font-family: var(--fuente-titulo);
+    color: var(--color-texto2);
+    margin: 0;
+    line-height: 1;
+}
+
+/* ---- Badges / Estado ---- */
+.badge-activo {
+    background: rgba(16, 185, 129, 0.12);
+    color: #065f46;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-inactivo {
+    background: rgba(239, 68, 68, 0.12);
+    color: #991b1b;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ---- Botón flecha ---- */
+.botonFlecha {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: var(--transicion);
+    filter: invert(60%) sepia(80%) saturate(400%) hue-rotate(0deg);
+}
+
+.botonFlecha:hover {
+    transform: scale(1.2);
+    filter: invert(55%) sepia(90%) saturate(500%) hue-rotate(0deg);
+}
+
+/* ---- Alerts ---- */
+.alert-success {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #065f46;
+    border-radius: var(--radio-md);
+}
+
+/* ---- Scrollbar personalizado ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: var(--color-tarjeta-borde);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-primario); }

@@ -1,0 +1,15 @@
+# Archivos específicos de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos de iconos de carpetas personalizados
+Icon
+
+
+# Archivos de metadatos de miniaturas
+._*
+
+# Archivos de escritorio de Windows (por si acaso)
+Thumbs.db
+desktop.ini

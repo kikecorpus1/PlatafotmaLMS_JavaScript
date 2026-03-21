@@ -1,0 +1,21 @@
+/* ============================================
+   ACADEMIA SWBAR400 — Fuentes
+   ============================================ */
+
+@font-face {
+    font-family: 'interSemiBold';
+    src: url('../recursos/fonts/Inter_18pt-SemiBold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'interSemiBoldItalic';
+    src: url('../recursos/fonts/Inter_18pt-SemiBoldItalic.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'interRegular';
+    src: url('../recursos/fonts/Inter_24pt-Regular.ttf') format('truetype');
+    font-display: swap;
+}
