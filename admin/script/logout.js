@@ -2,7 +2,16 @@
 // Agregar este script a cualquier página que tenga "Cerrar Sesión"
 
 function cerrarSesion(rutaLogin = "../../index.html") {
+    // Guardar preferencias antes de limpiar
+    const modoOscuro = localStorage.getItem("modoOscuro");
+    const configLMS = localStorage.getItem("configLMS");
+    
     localStorage.clear();
+    
+    // Restaurar preferencias
+    if (modoOscuro) localStorage.setItem("modoOscuro", modoOscuro);
+    if (configLMS) localStorage.setItem("configLMS", configLMS);
+    
     window.location.href = rutaLogin;
 }
 

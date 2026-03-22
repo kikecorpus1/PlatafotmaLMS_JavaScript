@@ -52,28 +52,29 @@ document.addEventListener("DOMContentLoaded", () => {
         padding: 0;
     `;
     document.body.appendChild(panelNotif);
-
     // ✅ Badge de notificaciones no leídas
     const badge = document.createElement("span");
     badge.id = "badgeNotif";
     badge.style.cssText = `
-        position: absolute;
-        top: -6px;
-        right: -6px;
-        background: #FC3B56;
-        color: white;
-        border-radius: 50%;
-        width: 18px;
-        height: 18px;
-        font-size: 11px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        display: none;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #FC3B56;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 10;
     `;
-    campana.parentElement.style.position = "relative";
-    campana.parentElement.appendChild(badge);
+    campana.style.position = "relative";
+    campana.style.display = "inline-flex";
+    campana.style.alignItems = "center";
+    campana.appendChild(badge);
 
     function actualizarBadge() {
         const noLeidas = getNotificaciones().filter(n => !n.leida).length;

@@ -560,95 +560,121 @@ canvas {
 }
 
 /* ============================================
-   ✅ MODO OSCURO — aplica a toda la página
+   MODO OSCURO — aplica a toda la página
    ============================================ */
 
+.modoOscuro body,
 body.modoOscuro {
     background-color: var(--color-fondo) !important;
     color: var(--color-texto2) !important;
 }
 
+.modoOscuro .principal,
+.modoOscuro .dashboard,
+.modoOscuro .cuerpo,
 body.modoOscuro .principal,
 body.modoOscuro .dashboard,
 body.modoOscuro .cuerpo {
     background-color: var(--color-fondo);
 }
 
+.modoOscuro .encabezado,
+.modoOscuro nav.navbar,
 body.modoOscuro .encabezado,
 body.modoOscuro nav.navbar {
     background: var(--color-tarjeta) !important;
     border-bottom-color: var(--color-tarjeta-borde) !important;
 }
 
+.modoOscuro .pages .nav-link,
 body.modoOscuro .pages .nav-link {
     color: #94A3B8 !important;
 }
 
+.modoOscuro .pages .nav-link.active,
+.modoOscuro .pages .nav-link:hover,
 body.modoOscuro .pages .nav-link.active,
 body.modoOscuro .pages .nav-link:hover {
     color: var(--color-primario) !important;
 }
 
+.modoOscuro .botonesH p,
 body.modoOscuro .botonesH p {
     color: var(--color-texto2) !important;
 }
 
+.modoOscuro .botonesH img,
 body.modoOscuro .botonesH img {
     filter: invert(1) opacity(0.6);
 }
 
+.modoOscuro .botonesH img:hover,
 body.modoOscuro .botonesH img:hover {
     filter: invert(1) opacity(1);
 }
 
+.modoOscuro .sidebarCuerpo,
 body.modoOscuro .sidebarCuerpo {
     background: var(--color-tarjeta);
     border-left-color: var(--color-tarjeta-borde);
 }
 
+.modoOscuro .cuadroEstadistica,
 body.modoOscuro .cuadroEstadistica {
     background: var(--color-tarjeta);
     border-color: var(--color-tarjeta-borde);
 }
 
+.modoOscuro .cuadroEstadistica .titulito,
 body.modoOscuro .cuadroEstadistica .titulito {
     color: #94A3B8 !important;
 }
 
+.modoOscuro .cuadroEstadistica .infoEstadistica,
 body.modoOscuro .cuadroEstadistica .infoEstadistica {
     color: var(--color-texto2) !important;
 }
 
+.modoOscuro .sidebarCuerpo h2,
 body.modoOscuro .sidebarCuerpo h2 {
     color: #94A3B8 !important;
     border-bottom-color: var(--color-tarjeta-borde) !important;
 }
 
+.modoOscuro .contenedorDeTabla,
+.modoOscuro .contenedorDeTablaL,
 body.modoOscuro .contenedorDeTabla,
 body.modoOscuro .contenedorDeTablaL {
     background: var(--color-tarjeta);
     border-color: var(--color-tarjeta-borde);
 }
 
+.modoOscuro .table,
 body.modoOscuro .table {
     color: var(--color-texto2) !important;
 }
 
+.modoOscuro .table thead th,
 body.modoOscuro .table thead th {
     background-color: rgba(255,144,0,0.1) !important;
     color: var(--color-primario) !important;
     border-color: var(--color-tarjeta-borde) !important;
 }
 
+.modoOscuro .table tbody tr:hover,
 body.modoOscuro .table tbody tr:hover {
     background: rgba(255,144,0,0.08) !important;
 }
 
+.modoOscuro .table tbody td,
 body.modoOscuro .table tbody td {
     border-color: var(--color-tarjeta-borde) !important;
     color: var(--color-texto2) !important;
 }
 
+.modoOscuro .fotoPerfil,
+.modoOscuro .infoPerfil,
+.modoOscuro .descripcion,
 body.modoOscuro .fotoPerfil,
 body.modoOscuro .infoPerfil,
 body.modoOscuro .descripcion {
@@ -656,10 +682,13 @@ body.modoOscuro .descripcion {
     border-color: var(--color-tarjeta-borde);
 }
 
+.modoOscuro .fotoPerfil p,
 body.modoOscuro .fotoPerfil p {
     color: var(--color-texto2) !important;
 }
 
+.modoOscuro .form-control,
+.modoOscuro .form-select,
 body.modoOscuro .form-control,
 body.modoOscuro .form-select {
     background-color: var(--color-input) !important;
@@ -667,6 +696,10 @@ body.modoOscuro .form-select {
     color: var(--color-texto2) !important;
 }
 
+.modoOscuro #formModuloContainer,
+.modoOscuro #formLeccionContainer,
+.modoOscuro #formModificarDocente,
+.modoOscuro #formModificarEstudiante,
 body.modoOscuro #formModuloContainer,
 body.modoOscuro #formLeccionContainer,
 body.modoOscuro #formModificarDocente,
@@ -675,47 +708,42 @@ body.modoOscuro #formModificarEstudiante {
     border-color: var(--color-tarjeta-borde) !important;
 }
 
+.modoOscuro .dashboard > h2,
 body.modoOscuro .dashboard > h2 {
     color: var(--color-texto2) !important;
     border-bottom-color: rgba(255,144,0,0.3) !important;
 }
 
+.modoOscuro .form-label,
 body.modoOscuro .form-label {
     color: var(--color-texto2) !important;
 }
 
 /* ============================================
-   RESPONSIVE
+   MODO OSCURO — fix tablas Bootstrap
    ============================================ */
 
-@media (max-width: 1024px) {
-    .sidebarCuerpo {
-        width: 200px;
-        min-width: 200px;
-    }
+.modoOscuro .table-striped > tbody > tr:nth-of-type(odd) > *,
+body.modoOscuro .table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: rgba(255,255,255,0.03) !important;
+    color: var(--color-texto2) !important;
 }
 
-@media (max-width: 768px) {
-    .sidebar {
-        width: 56px !important;
-        min-width: 56px !important;
-        max-width: 56px !important;
-    }
-    .sidebar nav .nav-link a span,
-    .sidebar nav .nav-link p,
-    .sidebar-brand,
-    .sidebar-label,
-    .contenedorDeGrafica {
-        display: none !important;
-    }
-    .principal {
-        width: calc(100% - 56px) !important;
-        margin-left: 56px !important;
-    }
-    .sidebarCuerpo {
-        display: none;
-    }
-    .cuerpo {
-        flex-direction: column;
-    }
+.modoOscuro .table-striped > tbody > tr:nth-of-type(even) > *,
+body.modoOscuro .table-striped > tbody > tr:nth-of-type(even) > * {
+    background-color: transparent !important;
+    color: var(--color-texto2) !important;
+}
+
+.modoOscuro .table-hover > tbody > tr:hover > *,
+body.modoOscuro .table-hover > tbody > tr:hover > * {
+    background-color: rgba(255,144,0,0.08) !important;
+    color: var(--color-texto2) !important;
+}
+
+.modoOscuro .table > :not(caption) > * > *,
+body.modoOscuro .table > :not(caption) > * > * {
+    background-color: transparent !important;
+    color: var(--color-texto2) !important;
+    border-color: var(--color-tarjeta-borde) !important;
 }
