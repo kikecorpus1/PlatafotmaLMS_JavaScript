@@ -159,11 +159,7 @@ git clone https://github.com/kikecorpus/NOMBRE_REPO.git
 
 ## 📸 Capturas de pantalla
 
-| Login | Panel Admin | Cursos |
-|---|---|---|
-| ![login](./recursos/img/screenshots/login.png) | ![panel](./recursos/img/screenshots/panel.png) | ![cursos](./recursos/img/screenshots/cursos.png) |
-
-> *(Reemplaza las imágenes con capturas reales de tu proyecto)*
+![](./recursos/img/img/PlataformaLMS.gif) 
 
 ---
 
