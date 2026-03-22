@@ -61,7 +61,8 @@
 }
 
 /* Modo oscuro */
-body.modoOscuro {
+body.modoOscuro,
+html.modoOscuro body {
     --color-fondo:         #0F1117;
     --color-fondo-oscuro:  #1A1F2E;
     --color-sidebar:       #0A0D14;

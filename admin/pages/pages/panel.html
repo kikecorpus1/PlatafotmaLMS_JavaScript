@@ -41,6 +41,11 @@
       object-fit: cover;
     }
   </style>
+    <script>
+    if (localStorage.getItem("modoOscuro") === "true") {
+      document.documentElement.classList.add("modoOscuro");
+    }
+  </script>
 </head>
 <body>
   <div class="contenedorDePagina">

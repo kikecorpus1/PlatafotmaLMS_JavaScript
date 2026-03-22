@@ -4,71 +4,343 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Academia SWBAR400 — Iniciar Sesión</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-        crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/x-icon" href="./recursos/img/img/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --naranja: #FF9000;
+      --naranja-dark: #CC7200;
+      --fondo-oscuro: #0E1117;
+      --panel: #161B27;
+      --panel-borde: #232A3B;
+      --texto: #F0F4FF;
+      --texto-muted: #7A8599;
+      --input-bg: #1C2333;
+      --input-borde: #2E3A52;
+      --input-focus: #FF9000;
+      --radio: 14px;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--fondo-oscuro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Fondo decorativo */
+    body::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,144,0,0.12) 0%, transparent 70%);
+      top: -200px;
+      right: -150px;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,144,0,0.07) 0%, transparent 70%);
+      bottom: -150px;
+      left: -100px;
+      pointer-events: none;
+    }
+
+    /* Grid decorativo */
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,144,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,144,0,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    /* Tarjeta principal */
+    .login-card {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 440px;
+      background: var(--panel);
+      border: 1px solid var(--panel-borde);
+      border-radius: 24px;
+      padding: 2.5rem 2.2rem;
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Franja naranja superior */
+    .login-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--naranja);
+      border-radius: 0 0 4px 4px;
+    }
+
+    /* Header */
+    .login-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo-wrap {
+      width: 52px;
+      height: 52px;
+      background: rgba(255,144,0,0.12);
+      border: 1px solid rgba(255,144,0,0.25);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.1rem;
+    }
+
+    .logo-wrap img {
+      width: 32px;
+      filter: brightness(0) saturate(100%) invert(60%) sepia(90%) saturate(600%) hue-rotate(5deg);
+    }
+
+    .login-header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--texto);
+      letter-spacing: -0.3px;
+      margin-bottom: 0.3rem;
+    }
+
+    .login-header p {
+      font-size: 0.82rem;
+      color: var(--texto-muted);
+      font-weight: 300;
+    }
+
+    /* Campos */
+    .campo {
+      margin-bottom: 1rem;
+    }
+
+    .campo label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--texto-muted);
+      margin-bottom: 0.45rem;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .campo input,
+    .campo select {
+      width: 100%;
+      height: 50px;
+      background: var(--input-bg);
+      border: 1.5px solid var(--input-borde);
+      border-radius: var(--radio);
+      padding: 0 1rem;
+      font-size: 0.9rem;
+      color: var(--texto);
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      appearance: auto;
+    }
+
+    .campo input::placeholder {
+      color: #3E4A60;
+    }
+
+    .campo input:focus,
+    .campo select:focus {
+      border-color: var(--naranja);
+      box-shadow: 0 0 0 3px rgba(255,144,0,0.12);
+    }
+
+    .campo select option {
+      background: #1C2333;
+      color: var(--texto);
+    }
+
+    /* Botón */
+    .btn-login {
+      width: 100%;
+      height: 50px;
+      background: var(--naranja);
+      color: white;
+      border: none;
+      border-radius: var(--radio);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(255,144,0,0.3);
+      margin-top: 0.5rem;
+    }
+
+    .btn-login:hover {
+      background: var(--naranja-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(255,144,0,0.4);
+    }
+
+    .btn-login:active {
+      transform: translateY(0);
+    }
+
+    /* Divider */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1.2rem 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--panel-borde);
+    }
+
+    .divider span {
+      font-size: 0.72rem;
+      color: var(--texto-muted);
+      white-space: nowrap;
+    }
+
+    /* Footer */
+    .login-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+      color: #3E4A60;
+    }
+
+    /* Credenciales de prueba */
+    .cred-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,144,0,0.08);
+      border: 1px solid rgba(255,144,0,0.18);
+      border-radius: 8px;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.75rem;
+      color: #CC7200;
+      margin-top: 0.5rem;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .cred-badge strong {
+      color: var(--naranja);
+    }
+
+    /* Error */
+    .error-msg {
+      display: none;
+      background: rgba(239,68,68,0.1);
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 10px;
+      padding: 0.7rem 1rem;
+      font-size: 0.82rem;
+      color: #F87171;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .error-msg.visible { display: block; }
+  </style>
 </head>
 <body>
+  <div class="bg-grid"></div>
 
-  <div class="contenedorLogin">
+  <div class="login-card">
 
-    <!-- Logo -->
-    <img src="./recursos/img/img/diminutivo1.png" alt="Logo" class="diminutivo-login">
-
-    <div>
-      <h2>Academia SWBAR400</h2>
-      <p style="text-align:center; color:var(--color-texto-muted); font-size:0.85rem; margin-top:4px;">
-        Plataforma de aprendizaje
-      </p>
+    <div class="login-header">
+      <div class="logo-wrap">
+        <img src="./recursos/img/img/diminutivo1.png" alt="Logo">
+      </div>
+      <h1>Academia SWBAR400</h1>
+      <p>Plataforma de gestión de aprendizaje</p>
     </div>
 
-    <!-- Tipo de usuario -->
-    <div class="form-floating">
-      <label style="font-size:0.82rem; font-family:var(--fuente-titulo); color:var(--color-texto2); display:block; margin-bottom:6px;">
-        Tipo de Usuario
-      </label>
-      <select class="form-control" id="floatingSelect" style="appearance:auto;">
-        <option value="Selecciona Tipo de Usuario">Selecciona tu rol...</option>
+    <div class="error-msg" id="errorMsg">Usuario o contraseña incorrectos</div>
+
+    <div class="campo">
+      <label for="floatingSelect">Tipo de usuario</label>
+      <select id="floatingSelect">
+        <option value="">Selecciona tu rol...</option>
         <option value="1">Administrador</option>
         <option value="2">Docente</option>
         <option value="3">Estudiante</option>
       </select>
     </div>
 
-    <!-- Usuario -->
-    <div class="form-floating">
-      <label style="font-size:0.82rem; font-family:var(--fuente-titulo); color:var(--color-texto2); display:block; margin-bottom:6px;">
-        Correo / Usuario
-      </label>
-      <input type="email" class="form-control" id="floatingInput" placeholder="correo@ejemplo.com">
+    <div class="campo">
+      <label for="floatingInput">Correo / Usuario</label>
+      <input type="email" id="floatingInput" placeholder="correo@ejemplo.com">
     </div>
 
-    <!-- Contraseña -->
-    <div class="form-floating">
-      <label style="font-size:0.82rem; font-family:var(--fuente-titulo); color:var(--color-texto2); display:block; margin-bottom:6px;">
-        Contraseña
-      </label>
-      <input type="password" class="form-control" id="floatingPassword" placeholder="••••••••">
+    <div class="campo">
+      <label for="floatingPassword">Contraseña</label>
+      <input type="password" id="floatingPassword" placeholder="••••••••">
     </div>
 
-    <!-- Botón -->
-    <button type="button" class="botones" id="ingresar">
-      Ingresar →
-    </button>
+    <button class="btn-login" id="ingresar">Ingresar →</button>
 
-    <!-- Footer -->
-    <p class="login-footer">
-      Academia SWBAR400 · Campuslands · 2025-2026
-    </p>
+    <div class="divider"><span>Credenciales de prueba</span></div>
 
+    <div class="cred-badge">
+      Admin: <strong>admin@swbar400.com</strong> &nbsp;/&nbsp; clave: <strong>0000</strong>
+    </div>
+
+    <p class="login-footer">Academia SWBAR400 · Campuslands · 2025-2026</p>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-    crossorigin="anonymous">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./script/script.js"></script>
+
+  <script>
+    // Mostrar error de forma visual en lugar de alert
+    const _origAlert = window.alert;
+    window.alert = function(msg) {
+      if (msg && msg.toLowerCase().includes('incorrect')) {
+        const el = document.getElementById('errorMsg');
+        el.classList.add('visible');
+        setTimeout(() => el.classList.remove('visible'), 3000);
+      } else {
+        _origAlert(msg);
+      }
+    };
+  </script>
 </body>
 </html>

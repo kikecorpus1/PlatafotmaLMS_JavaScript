@@ -98,7 +98,7 @@ body::after {
     background: var(--color-input);
     border: 1.5px solid var(--color-tarjeta-borde);
     border-radius: var(--radio-md);
-    padding: 0.75rem 1rem;
+    padding: 1.5rem 1rem 0.5rem;    
     font-size: 0.9rem;
     color: var(--color-texto2);
     transition: var(--transicion);
